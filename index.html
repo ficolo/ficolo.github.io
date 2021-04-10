@@ -1,0 +1,20 @@
+---
+permalink: /
+title: Federico López Gómez
+---
+
+
+<h1 class="text-6xl font-serif mb-2">Fede's Simple website</h1>
+
+<p>Not much to see here</p>
+
+{% for tag in site.tags %}
+<h2 class="text-6xl font-serif mt-5 mb-2">{{ tag[0] | capitalize }}</h2>
+  <ul>
+    {% for post in tag[1] %}
+    <li>
+      <a href="{{ post.url }}" class="underline text-teal-400">{{ post.title }}</a>
+    </li>
+    {% endfor %}
+  </ul>
+{% endfor %}
