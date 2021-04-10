@@ -1,10 +1,13 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ site.data.manifest['main.css'] }}">
-    <title>{{ page.title }}</title>
-</head>
-<body class="border-denim-800 p-8 min-h-screen min-w-full border-8 font-sans">
-{{ content }}
+{% include head.html %}
+
+<body class="flex flex-col h-screen justify-between bg-teal-50 min-h-screen min-w-full font-sans">
+    {% include header.html %}
+    <main  class="container flex-grow  mb-auto w-4/6 bg-blush-50 p-8 shadow">
+        {{ content }}
+    </main>
+    {% include footer.html %}
 </body>
+
 </html>

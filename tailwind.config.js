@@ -7,16 +7,20 @@ module.exports = {
     ],
     darkMode: false,
     theme: {
+        container: {
+            center: true
+        },
         colors: {
-            gray: colors.coolGray,
+            gray: colors.trueGray,
             blue: colors.blueGray,
             red: colors.green,
             pink: colors.fuchsia,
-            primary: colors.red
+            white: colors.white
         },
         fontFamily: {
             sans: ['Graphik', 'sans-serif'],
             serif: ['Playfair Display', 'serif'],
+            mono: ['DM Mono', 'monospace']
           },
         extend: {
             spacing: {

@@ -1,18 +1,26 @@
 <!doctype html>
 <html lang="en">
-<head>
-    <link rel="stylesheet" href="{{ site.data.manifest['main.css'] }}">
-    <title>{{ page.title }}</title>
-</head>
-<body class="border-denim-800 p-8 min-h-screen min-w-full border-8">
-<h1 class="text-6xl font-serif">{{page.title}}</h1>
-{% if page.subtitle %}
-<h2  class="text-2xl font-sans font-light mt-2 mb-4">{{ page.subtitle }}</h2>
-{% endif %}
-{% if page.image %}
-<img  class="text-2xl font-sans font-light mt-2 mb-4" src="{{page.image}}"/>
-{% endif %}
-<a href="/" class="underline">Back to home</a>
-{{ content }}
+
+{% include head.html %}
+
+<body class="flex flex-col h-screen justify-between bg-teal-50 min-w-full font-sans">
+    {% include header.html %}
+    <main class="flex-grow container mx-auto w-4/6 bg-blush-50 p-8 shadow">
+        <h1 class="text-5xl font-serif">{{page.title}}</h1>
+        {% if page.subtitle %}
+        <h2 class="text-2xl font-sans font-light text-gray-600 mt-2 mb-4">{{ page.subtitle }}</h2>
+        {% endif %}
+        {% if page.image %}
+        <div>
+            <img class="text-2xl font-sans font-light mt-2 mb-4 h-48 w-full object-cover" src="{{page.image}}" alt="{{page.image-alt}}" />
+        </div>
+        
+        {% endif %}
+        {{ content }}
+    </main>
+    <div class="h-100">
+        {% include footer.html %}
+    </div>
 </body>
+
 </html>
